@@ -1,7 +1,3 @@
-# InputDeviceDetector
-A small script to detect runtime input device change for Unity Input System. 
-
-## How To Use
 1. Import the package to your project. 
 2. Simply drag the "Input Device Detector" prefab in the Prefab folder into your scene.
 3. In your own script using the namespace InputDeviceDetection.
@@ -17,10 +13,7 @@ If you wish to do this, use this link below，thanks:
 RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKSoXDoU2VQ
 
 =====================================================================================
-# 输入设备检测器
-当使用Unity的Input System时，可使用本脚本来检测游戏运行时输入设备的实时变更。
 
-## 如何使用
 1. 将安装包导入到项目中。
 2. 将Prefab文件夹中的 Input Device Detector 预制体拖到场景中。
 3. 在您自己的脚本中使用InputDeviceDetection命名空间。
