@@ -32,5 +32,6 @@ RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKS
 --------
 欢迎使用本脚本，如果您想在您的作品中提到我，请使用下面的链接，感谢您：
 
-RyanIndieDev - YouTube频道: https://www.youtube.com/channel/UCSRCf2y6LV8vpKSoXDoU2VQ
-阿严_独立游戏开发 - B站: https://space.bilibili.com/27164588/
+RyanIndieDev-YouTube频道: https://www.youtube.com/channel/UCSRCf2y6LV8vpKSoXDoU2VQ
+
+阿严_独立游戏开发-B站: https://space.bilibili.com/27164588/
