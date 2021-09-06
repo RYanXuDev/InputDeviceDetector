@@ -16,7 +16,7 @@ If you wish to do this, use this link below，thanks:
 
 RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKSoXDoU2VQ
 
-=====================================================================================
+===========================================================================
 # 输入设备检测器
 当使用Unity的Input System时，可使用本脚本来检测游戏运行时输入设备的实时变更。
 
