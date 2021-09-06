@@ -80,13 +80,13 @@ namespace InputDeviceDetection
             }
         }
 
-        private static void ShowCursor()
+        void ShowCursor()
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
 
-        private static void HideCursor()
+        void HideCursor()
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Confined;
