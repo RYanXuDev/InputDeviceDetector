@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -14,6 +15,8 @@ namespace InputDeviceDetection
         [SerializeField] UnityEvent onSwitchToMouse = default;
         [SerializeField] UnityEvent onSwitchToKeyboard = default;
         [SerializeField] UnityEvent onSwitchToGamepad = default;
+
+        Dictionary<InputDevice, UnityEvent> deviceSwitchTable = new Dictionary<InputDevice, UnityEvent>(); 
 
         InputDevice currentDevice;
 
@@ -42,6 +45,11 @@ namespace InputDeviceDetection
             mouse = Mouse.current;
             keyboard = Keyboard.current;
             gamepad = Gamepad.current;
+
+            deviceSwitchTable.Add(mouse, OnSwitchToMouse);
+            deviceSwitchTable.Add(keyboard, onSwitchToKeyboard);
+            deviceSwitchTable.Add(gamepad, onSwitchToGamepad);
+
             HideCursor();
 
             if (detectUIInputOnly)
@@ -81,23 +89,7 @@ namespace InputDeviceDetection
             if (change == InputActionChange.ActionPerformed)
             {
                 currentDevice = ((InputAction)obj).activeControl.device;
-
-                if (currentDevice == mouse)
-                {
-                    onSwitchToMouse?.Invoke();
-                }
-                else
-                {
-                    if (currentDevice == keyboard)
-                    {
-                        onSwitchToKeyboard?.Invoke();
-                    }
-
-                    if (currentDevice == gamepad)
-                    {
-                        onSwitchToGamepad?.Invoke();
-                    }
-                }
+                deviceSwitchTable[currentDevice].Invoke();
             }
         }
 
