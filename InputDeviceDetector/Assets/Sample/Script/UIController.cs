@@ -20,6 +20,7 @@ namespace InputDeviceDetection
 
         void SwitchToMouse()
         {
+            InputDeviceDetector.ShowCursor();
             iconMouse.enabled = true;
             iconKeyboard.enabled = false;
             iconGamepad.enabled = false;
@@ -28,6 +29,7 @@ namespace InputDeviceDetection
 
         void SwitchToKeyboard()
         {
+            InputDeviceDetector.HideCursor();
             iconKeyboard.enabled = true;
             iconMouse.enabled = false;
             iconGamepad.enabled = false;
@@ -36,6 +38,7 @@ namespace InputDeviceDetection
 
         void SwitchToGamepad()
         {
+            InputDeviceDetector.HideCursor();
             iconGamepad.enabled = true;
             iconKeyboard.enabled = false;
             iconMouse.enabled = false;

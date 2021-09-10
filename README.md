@@ -4,8 +4,11 @@ A small script to detect runtime input device change for Unity Input System.
 ## How To Use
 1. Import the package to your project. 
 2. Simply drag the "Input Device Detector" prefab in the Prefab folder into your scene.
+3. Use the event triggers to register device switch functions. 
 3. In your own script using the namespace InputDeviceDetection.
-4. Add listener for the input device switch event your need in your script， or use the event trigger box in the inspector.
+4. For adding listener for the input device switch event in your script, first using the namespace InputDeviceDetection, then call AddListener() of the event.
+5. If you only need to detect the UI input devices, check the "Detect UI Input Only";
+6. There are two convenient static method (InputDeviceDetector.ShowCursor()/HideCursor()) for showing/hiding the cursor. 
 
 Currently this script support mouse, keyboard and gamepad detection. 
 You may add any other devices that Unity Input System supported in the InputDeviceDetector.cs script. 
@@ -23,8 +26,10 @@ RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKS
 ## 如何使用
 1. 将安装包导入到项目中。
 2. 将Prefab文件夹中的 Input Device Detector 预制体拖到场景中。
-3. 在您自己的脚本中使用InputDeviceDetection命名空间。
-4. 在脚本中为您需要的输入设备切换事件添加监听函数，或使用检查器中的脚本的事件触发器来登记功能。
+3. 使用脚本的事件触发器来登记设备切换时所需要触发的功能。
+4. 如果需要在脚本中为输入设备切换事件添加监听函数，请先添加InputDeviceDetection命名空间，然后使用调用设备切换事件的AddListener()函数来登记功能。
+5. 如果您只需要检测UI输入设备的切换，请勾选"Detect UI Input Only"选项。
+6. 脚本中有两个方便的静态函数(InputDeviceDetector.ShowCursor()/HideCursor())用来切换光标的显示/隐藏。
 
 本脚本目前支持鼠标、键盘和游戏手柄检测。
 您可以在InputDeviceDetector.cs脚本中添加Unity输入系统支持的任何其他设备。
