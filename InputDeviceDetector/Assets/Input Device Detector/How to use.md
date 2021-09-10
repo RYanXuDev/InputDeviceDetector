@@ -1,7 +1,6 @@
 1. Import the package to your project. 
 2. Simply drag the "Input Device Detector" prefab in the Prefab folder into your scene.
 3. Use the event triggers to register device switch functions. 
-3. In your own script using the namespace InputDeviceDetection.
 4. For adding listener for the input device switch event in your script, first using the namespace InputDeviceDetection, then call AddListener() of the event.
 5. If you only need to detect the UI input devices, check the "Detect UI Input Only";
 6. There are two convenient static method (InputDeviceDetector.ShowCursor()/HideCursor()) for showing/hiding the cursor. 
