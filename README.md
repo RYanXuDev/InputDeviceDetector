@@ -26,7 +26,7 @@ RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKS
 1. 将安装包导入到项目中。
 2. 将Prefab文件夹中的 Input Device Detector 预制体拖到场景中。
 3. 使用脚本的事件触发器来登记设备切换时所需要触发的功能。
-4. 如果需要在脚本中为输入设备切换事件添加监听函数，请先添加InputDeviceDetection命名空间，然后使用调用设备切换事件的AddListener()函数来登记功能。
+4. 如果需要在脚本中为输入设备切换事件添加监听函数，请先添加InputDeviceDetection命名空间，然后调用设备切换事件的AddListener()函数来登记功能。
 5. 如果您只需要检测UI输入设备的切换，请勾选"Detect UI Input Only"选项。
 6. 脚本中有两个方便的静态函数(InputDeviceDetector.ShowCursor()/HideCursor())用来切换光标的显示/隐藏。
 
