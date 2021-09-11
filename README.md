@@ -1,5 +1,5 @@
 # InputDeviceDetector
-A small script to detect runtime input device change for Unity Input System. 
+This small script is design for multiple input devices supporting, use it to detect the runtime switch between input devices for Unity Input System. 
 
 ## How To Use
 1. Import the package to your project. 
@@ -20,7 +20,7 @@ RyanIndieDev - YouTube channel: https://www.youtube.com/channel/UCSRCf2y6LV8vpKS
 
 ===========================================================================
 # 输入设备检测器
-当使用Unity的Input System时，可使用本脚本来检测游戏运行时输入设备的实时变更。
+本脚本为支持多种输入设备而设计，当使用Unity的Input System时，可使用本脚本来检测游戏运行时不同输入设备之间的实时切换。
 
 ## 如何使用
 1. 将安装包导入到项目中。
