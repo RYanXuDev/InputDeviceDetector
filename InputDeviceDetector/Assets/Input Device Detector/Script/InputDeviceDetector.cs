@@ -8,8 +8,9 @@ namespace InputDeviceDetection
 {    
     public class InputDeviceDetector : MonoBehaviour
     {
-        [Header("Option"), Tooltip("只检测UI输入")]
+        [Header("Options")]
         [SerializeField] bool detectUIInputOnly = true;
+        [SerializeField] bool hideCursorAtBeginning = true;
 
         [Space(10f)][Header("Device Switch Event Triggers")]
         [SerializeField] UnityEvent onSwitchToMouse = default;
@@ -50,7 +51,10 @@ namespace InputDeviceDetection
             deviceSwitchTable.Add(keyboard, onSwitchToKeyboard);
             deviceSwitchTable.Add(gamepad, onSwitchToGamepad);
 
-            HideCursor();
+            if (hideCursorAtBeginning)
+            {
+                HideCursor();
+            }
 
             if (detectUIInputOnly)
             {
