@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28c80e244f54254f8f03b4d1af52513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectUIInputOnly: 1
+  hideCursorAtBeginning: 0
   onSwitchToMouse:
     m_PersistentCalls:
       m_Calls: []

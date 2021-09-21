@@ -10,7 +10,7 @@ namespace InputDeviceDetection
     {
         [Header("Options")]
         [SerializeField] bool detectUIInputOnly = true;
-        [SerializeField] bool hideCursorAtBeginning = true;
+        [SerializeField] bool hideCursorAtBeginning = false;
 
         [Space(10f)][Header("Device Switch Event Triggers")]
         [SerializeField] UnityEvent onSwitchToMouse = default;
@@ -47,26 +47,23 @@ namespace InputDeviceDetection
             keyboard = Keyboard.current;
             gamepad = Gamepad.current;
 
-            deviceSwitchTable.Add(mouse, OnSwitchToMouse);
-            deviceSwitchTable.Add(keyboard, onSwitchToKeyboard);
-            deviceSwitchTable.Add(gamepad, onSwitchToGamepad);
+            if (mouse != null) deviceSwitchTable.Add(mouse, OnSwitchToMouse);
+            if (keyboard != null) deviceSwitchTable.Add(keyboard, onSwitchToKeyboard);
+            if (gamepad != null) deviceSwitchTable.Add(gamepad, onSwitchToGamepad);
 
             if (hideCursorAtBeginning)
             {
                 HideCursor();
             }
 
-            if (detectUIInputOnly)
-            {
-                UIInputModule = FindObjectOfType<InputSystemUIInputModule>();
+            UIInputModule = FindObjectOfType<InputSystemUIInputModule>(true);
 
-            #if UNITY_EDITOR
-                if (UIInputModule == null)
-                {
-                    Debug.LogError("Can NOT find UI Input Module! Please check there is a Event System in the scene and is currently using the UI Input Module!");
-                }
-            #endif
+        #if UNITY_EDITOR
+            if (UIInputModule == null && detectUIInputOnly)
+            {
+                Debug.LogError("Can NOT find UI Input Module! Please check there is a Event System in the scene and is currently using the UI Input Module!");
             }
+        #endif
         }
 
         void OnEnable()
@@ -85,10 +82,7 @@ namespace InputDeviceDetection
 
         void DetectCurrentInputDevice(object obj, InputActionChange change)
         {
-            if (detectUIInputOnly)
-            {
-                if (!UIInputModule.isActiveAndEnabled) return;
-            }
+            if (detectUIInputOnly && !UIInputModule.isActiveAndEnabled) return;
 
             if (change == InputActionChange.ActionPerformed)
             {
