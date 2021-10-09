@@ -37,12 +37,11 @@ namespace InputDeviceDetection
 
         void Awake()
         {
-            if (instance != null)
+            if (instance == null)
             {
-                Destroy(instance.gameObject);
+                instance = this;
             }
 
-            instance = this;
             mouse = Mouse.current;
             keyboard = Keyboard.current;
             gamepad = Gamepad.current;
@@ -76,8 +75,8 @@ namespace InputDeviceDetection
             InputSystem.onActionChange -= DetectCurrentInputDevice;
 
             onSwitchToMouse?.RemoveAllListeners();
-            OnSwitchToKeyboard?.RemoveAllListeners();
-            OnSwitchToGamepad?.RemoveAllListeners();
+            onSwitchToKeyboard?.RemoveAllListeners();
+            onSwitchToGamepad?.RemoveAllListeners();
         }
 
         void DetectCurrentInputDevice(object obj, InputActionChange change)
